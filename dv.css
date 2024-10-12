@@ -38,6 +38,8 @@ nav a {
     text-transform: uppercase;
     font-size: 1.1em;
     transition: color 0.3s ease-in-out;
+    width: 200px; /* Added fixed width */
+    text-align: center; /* Center text */
 }
 
 nav a:hover {
@@ -82,8 +84,8 @@ h2 {
 
 .product img {
     width: 100%;
-    height: 150px; /* Фиксированная высота изображений */
-    object-fit: cover; /* Обрезает изображение при сохранении его пропорций */
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio */
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
 }
@@ -107,27 +109,24 @@ button:focus, a:focus {
     box-shadow: none;
 }
 
-/* Медиа-запросы для адаптации на мобильных устройствах */
+/* Media queries for mobile adaptation */
 @media (max-width: 768px) {
     header .logo {
         font-size: 1.5em;
     }
-
     nav {
         flex-direction: column;
     }
-
     nav a {
         font-size: 1em;
         padding: 10px;
     }
-
     .product-grid {
         grid-template-columns: 1fr;
     }
-
     .product {
         margin-bottom: 20px;
     }
 }
+
 
