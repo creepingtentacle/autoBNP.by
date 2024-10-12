@@ -38,6 +38,7 @@ nav a {
     text-transform: uppercase;
     font-size: 1.1em;
     transition: color 0.3s ease-in-out;
+    border-radius: 15px; /* Добавлено округлое выделение кнопок */
 }
 
 nav a:hover {
@@ -50,6 +51,8 @@ nav a:focus, nav a:hover {
 }
 
 .container {
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -82,6 +85,7 @@ nav a:focus, nav a:hover {
     height: auto;
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
+    object-fit: cover; /* Обеспечивает полное заполнение изображения */
 }
 
 .category-btn span, .product h3 {
@@ -134,3 +138,4 @@ button:focus, a:focus {
         margin-bottom: 20px;
     }
 }
+
