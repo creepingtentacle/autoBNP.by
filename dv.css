@@ -65,6 +65,7 @@ nav a:focus, nav a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    padding: 10px;
 }
 
 .category:hover, .product:hover {
@@ -82,10 +83,10 @@ nav a:focus, nav a:hover {
 
 .category-btn img, .product img {
     width: 100%;
-    height: auto;
+    height: 150px; /* Возвращаем высоту изображений */
+    object-fit: contain; /* Обеспечиваем полное отображение изображения */
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
-    object-fit: cover; /* Обеспечивает полное заполнение изображения */
 }
 
 .category-btn span, .product h3 {
@@ -138,4 +139,3 @@ button:focus, a:focus {
         margin-bottom: 20px;
     }
 }
-
