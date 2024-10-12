@@ -84,7 +84,7 @@ nav a:focus, nav a:hover {
     width: 100%;
     height: auto;
     max-height: 150px; /* Ограничиваем высоту изображений */
-    object-fit: contain; /* Обеспечиваем полное отображение изображения */
+    object-fit: cover; /* Обеспечиваем полное отображение изображения */
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
 }
@@ -126,4 +126,16 @@ button:focus, a:focus {
         flex-direction: column;
     }
 
+    nav a {
+        font-size: 1em;
+        padding: 10px;
+    }
 
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .category, .product {
+        margin-bottom: 20px;
+    }
+}
