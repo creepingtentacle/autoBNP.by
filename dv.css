@@ -32,13 +32,13 @@ nav {
 
 nav a {
     color: #fff;
-    padding: 14px 20px;
+    padding: 10px 15px; /* Уменьшены отступы */
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 1.1em;
+    font-size: 0.9em; /* Уменьшен размер шрифта */
     transition: color 0.3s ease-in-out;
-    width: 200px;
+    width: auto;
     text-align: center;
 }
 
@@ -53,7 +53,7 @@ nav a:focus, nav a:hover {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Уменьшена минимальная ширина */
     gap: 20px;
     padding: 20px;
 }
@@ -90,6 +90,7 @@ nav a:focus, nav a:hover {
     height: auto;
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
+    object-fit: cover; /* Обеспечивает полное заполнение изображения */
 }
 
 .category-btn span {
@@ -101,6 +102,7 @@ nav a:focus, nav a:hover {
     border-radius: 0 0 10px 10px;
     width: 100%;
     text-align: center;
+    font-size: 0.8em; /* Уменьшен размер шрифта */
 }
 
 button:focus, a:focus {
@@ -108,19 +110,19 @@ button:focus, a:focus {
     box-shadow: none;
 }
 
-/* Media queries for mobile adaptation */
+/* Медиа-запросы для адаптации на мобильных устройствах */
 @media (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .category-btn span {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     nav a {
-        font-size: 0.9em;
-        padding: 10px;
+        font-size: 0.8em;
+        padding: 8px;
     }
 }
 
@@ -134,8 +136,8 @@ button:focus, a:focus {
     }
 
     nav a {
-        font-size: 0.9em;
-        padding: 10px;
+        font-size: 0.8em;
+        padding: 8px;
     }
 
     .container {
@@ -147,6 +149,6 @@ button:focus, a:focus {
     }
 
     .category-btn span {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
