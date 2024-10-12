@@ -46,4 +46,74 @@ nav a:hover {
 
 nav a:focus, nav a:hover {
     outline: none;
-    box-shadow
+    box-shadow: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.product {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+}
+
+.product h3 {
+    color: #800000;
+    margin-top: 10px;
+}
+
+.product .price {
+    color: #4b0e0e;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+button:focus, a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Медиа-запросы для адаптации на мобильных устройствах */
+@media (max-width: 768px) {
+    header .logo {
+        font-size: 1.5em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .product {
+        margin-bottom: 20px;
+    }
+}
