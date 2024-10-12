@@ -84,7 +84,7 @@ nav a:focus, nav a:hover {
     width: 100%;
     height: auto;
     max-height: 150px; /* Ограничиваем высоту изображений */
-    object-fit: cover; /* Обеспечиваем полное отображение изображения */
+    object-fit: contain; /* Обеспечиваем полное отображение изображения */
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
 }
@@ -139,3 +139,4 @@ button:focus, a:focus {
         margin-bottom: 20px;
     }
 }
+
