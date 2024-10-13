@@ -1,13 +1,21 @@
+/* Apply the Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Style for the header */
 header {
     background-color: #8B2C2C; /* Красный цвет фона */
     text-align: center;
     padding: 20px 0;
+    border: 2px solid red; /* Красная рамка */
 }
 
 header .logo {
     color: white;
-    font-size: 2em;
+    font-size: 2.5em; /* Увеличиваем шрифт */
     font-weight: bold;
 }
 
@@ -22,7 +30,9 @@ nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 1.2em; /* Увеличиваем шрифт */
+    border: 2px solid black; /* Черная рамка */
+    padding: 5px;
 }
 
 /* Style for the container */
@@ -33,17 +43,18 @@ nav a {
 /* Style for the product detail section */
 .product-detail {
     text-align: center;
+    font-size: 1.2em; /* Увеличиваем шрифт */
 }
 
 /* Style for the gallery images */
 .gallery img {
-    width: 50%; /* Уменьшаем размер изображений */
+    width: 40%; /* Уменьшаем размер изображений */
     margin: 10px;
 }
 
 /* Style for the price */
 .price {
-    font-size: 1.5em;
+    font-size: 1.8em; /* Увеличиваем шрифт */
     color: #8B2C2C;
     font-weight: bold;
 }
@@ -52,6 +63,3 @@ nav a {
 .video-review {
     margin-top: 20px;
 }
-
-    justify-content: center;
-    background
