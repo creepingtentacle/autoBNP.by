@@ -1,27 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Style for the header */
 header {
+    background-color: #8B2C2C; /* Красный цвет фона */
     text-align: center;
-    padding: 20px 10px;
-    background: #800000;
-    color: #fff;
+    padding: 20px 0;
 }
 
-.logo {
+header .logo {
+    color: white;
     font-size: 2em;
     font-weight: bold;
 }
 
+/* Style for the navigation bar */
 nav {
-    display: flex;
+    background-color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Style for the container */
+.container {
+    padding: 20px;
+}
+
+/* Style for the product detail section */
+.product-detail {
+    text-align: center;
+}
+
+/* Style for the gallery images */
+.gallery img {
+    width: 50%; /* Уменьшаем размер изображений */
+    margin: 10px;
+}
+
+/* Style for the price */
+.price {
+    font-size: 1.5em;
+    color: #8B2C2C;
+    font-weight: bold;
+}
+
+/* Style for the video review */
+.video-review {
+    margin-top: 20px;
+}
+
     justify-content: center;
     background
