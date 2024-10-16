@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электромотоцикл BNP Monster - АвтоБНП</title>
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">АвтоБНП</h1>
+    </header>
+    <nav>
+        <a href="dvuhkolesny.html">Назад</a>
+        <a href="index.html">Главная</a>
+        <a href="dostavka.html">Доставка</a>
+        <a href="oplata.html">Оплата</a>
+        <a href="onas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Электромотоцикл BNP Monster</h2>
+        <div class="product-detail">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/monster1.jpg" alt="Электроскутер BNP Monster" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <h3>Электромотоцикл BNP Monster.</h3>
+            <p class="price">Акционная стоимость: 6300 рублей</p>
+            <p>Через финансовых партнеров: от 151 руб. в месяц до пяти лет без предоплат и первых взносов с возможностью досрочного погашения.</p>
+            <p>Вариант рассрочки от нашей компании: 2520 руб. предоплата, оставшаяся сумма на 12 месяцев по 315 рублей.<p>
+            <h3>Характеристики:</h3>
+            <p>Максимальная скорость: до 60-65 км/ч(в зависимости от нагрузки)</p>
+            <p>Мощность электромотора (бесщёточный): 1500 W</p>
+            <p>Аккумулятор свинцово-гелевый: напряжение 72V, емкость 30 Ah</p>
+            <p>Запас хода: до 65 км (в зависимости от нагрузки)</p>
+            <p>Допустимая нагрузка: 200 кг</p>
+            <p>Количество мест: 2</p>
+            <p>Размер колес: 12</p>
+            <p>Габариты: Длина 180 см, Ширина 64 см, Высота 103 см</p>
+            <p>Тип подвески: пружинно-масляный амортизатор: эффективная система помогает поддерживать устойчивость техники на дороге, уменьшая боковые качения и повышая уровень управляемости</p>
+            <p>Тормоза: Передние и задние дисковые гидравлические.</p>
+            <p>Освещение: Ближний\дальний свет, ходовые и габаритные огни для безопасного передвижения ночью и в условиях плохой видимости.</p>
+            <p>Противоугонная сигнализация: Штатная с двумя брелок-ключами</p>
+            <p>Вес 96кг.</p>
+            <p>LED-экран: 11 дюймов</p>
+            <p>Установлены Bluetooth колонки, для подключения музыки</p>
+        </div>
+    </div>
+    <script>
+        const images = ["images/booster1.jpg", "images/booster2.jpg", "images/booster3.jpg", "images/booster4.jpg", "images/booster5.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
