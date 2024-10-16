@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туалет - АвтоБНП</title>
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">АвтоБНП</h1>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="dostavka.html">Доставка</a>
+        <a href="oplata.html">Оплата</a>
+        <a href="onas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Бани под ключ</h2>
+        <div class="product-detail">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/bani1.jpg" alt="Бани под ключ" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <h3>Мы создаем бани под ключ, учитывая все ваши пожелания. Доверьтесь нам, и мы воплотим вашу баню мечты. Оставляйте заявку, пока действует акция!</h3>
+            <p class="price">Стоимость бани: от 5500 BYN</p>
+            <p>Предоставляем возможность приобретения через финансовых партнеров без первого взноса до пяти лет от 100 BYN в месяц.</p>
+            <h3>Что входит в стандартную комплектацию "БАНЯ ПОД КЛЮЧ:"</h3>
+            <p>Каркас бани изготовлен из бруса 45-47 мм (увеличенная толщина стены)..</p>
+            <p>Обработка фасада защитно-декоративным составом, цвет в ассортименте.</p>
+            <p>Кровля - мягкая черепица, цвет в ассортименте.</p>
+            <p>Полки и трапы из ольхи.</p>
+            <p>Окно в парилке (стандартное 30*30 - можно увеличить размер).</p>
+            <p>Дверь наружная деревянная (в комплекте наличники, ручки и замок).</p>
+            <p>Дверь внутренняя из закаленного, жаропрочного стекла.</p>
+            <p>Защита от нагрева из минерита за печью.</p>
+            <p>Дровяная печь "Везувий ASTON 12".</p>
+            <p>Комплект камней 80 кг.</p>
+            <p>Утепленный дымоход, зонт.</p>
+            <p>Защита от нагрева из минерита за печью.</p>
+            <p>Бак для воды объемом 55 литров.</p>
+            <p>Вентиляционные продухи.</p>
+            <p>Обручи с регулируемыми замками.</p>
+            <p>Электропроводка и освещение в каждом помещении.</p>
+            <p>Опоры бани из бруса, обработанные антисептиком.</p>
+        </div>
+    </div>
+    <script>
+        const images = ["images/bani1.jpg", "images/bani2.jpg", "images/bani3.jpg", "images/bani4.jpg", "images/bani5.jpg", "images/bani6.jpg", "images/bani7.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
