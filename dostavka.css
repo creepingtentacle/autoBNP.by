@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --main-bg-color: #f4f4f4;
+    --header-bg-color: #ffffff;
+    --text-color: #333;
+    --accent-color: #8B2C2C;
+    --white: #ffffff;
+    --footer-bg-color: #333;
+    --primary-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--accent-color);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 15px;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.delivery-info {
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    background-color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.delivery-info h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: var(--accent-color);
+}
+
+.delivery-info p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.back-button {
+    margin-top: 20px;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button a:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
