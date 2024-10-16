@@ -68,6 +68,7 @@ button.prev, button.next {
     padding: 10px;
     cursor: pointer;
     font-size: 1.5em;
+    border-radius: 50%;
 }
 
 button.prev {
@@ -109,4 +110,13 @@ button.next {
 /* Media queries for mobile optimization */
 @media (max-width: 768px) {
     header .logo {
-        font-size: 2.5em; /* Корректируем шрифт на мобиль
+        font-size: 2.5em; /* Корректируем шрифт на мобильных устройствах */
+    }
+
+    nav a {
+        font-size: 1em; /* Корректируем шрифт на мобильных устройствах */
+        margin: 0 10px; /* Корректируем отступ */
+    }
+
+    .gallery img {
+        width: 80%; /* Корректируем размер изображ
