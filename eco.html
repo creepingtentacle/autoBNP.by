@@ -11,7 +11,7 @@
         <h1 class="logo">АвтоБНП</h1>
     </header>
     <nav>
-        <a href="dvuhkolesny.html"> Назад</a>
+        <a href="dvuhkolesny.html">Назад</a>
         <a href="index.html">Главная</a>
         <a href="dostavka.html">Доставка</a>
         <a href="oplata.html">Оплата</a>
@@ -21,10 +21,10 @@
     <div class="container">
         <h2>Электроскутер BNP Eco</h2>
         <div class="product-detail">
-            <div class="gallery">
-                <img src="images/eco1.jpg" alt="Электроскутер BNP Eco">
-                <img src="images/eco2.jpg" alt="Электроскутер Eco">
-                <img src="images/eco3.jpg" alt="Электроскутер Eco">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/eco1.jpg" alt="Электроскутер BNP Eco" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
             </div>
             <h3>Электроскутер BNP Eco</h3>
             <p class="price">Стоимость: 3700 рублей</p>
@@ -45,5 +45,19 @@
             <p>LED дисплей</p>
         </div>
     </div>
+    <script>
+        const images = ["images/eco1.jpg", "images/eco2.jpg", "images/eco3.jpg", "images/eco1.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
 </body>
 </html>
