@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Электроскутер BNP Eco Lite - АвтоБНП</title>
+    <title>Электроскутер BNP Eco - АвтоБНП</title>
     <link rel="stylesheet" href="pixel.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <h1 class="logo">АвтоБНП</h1>
     </header>
     <nav>
-        <a href="dvuhkolesny.html"> Назад</a>
+        <a href="dvuhkolesny.html">Назад</a>
         <a href="index.html">Главная</a>
         <a href="dostavka.html">Доставка</a>
         <a href="oplata.html">Оплата</a>
@@ -19,12 +19,12 @@
         <a href="kontakty.html">Контакты</a>
     </nav>
     <div class="container">
-        <h2>Электроскутер BNP Eco Lite</h2>
+        <h2>Электроскутер BNP Eco</h2>
         <div class="product-detail">
-            <div class="gallery">
-                <img src="images/ecol1.jpg" alt="Электроскутер BNP Eco Lite">
-                <img src="images/ecol2.jpg" alt="Электроскутер Eco Lite">
-                <img src="images/ecol3.jpg" alt="Электроскутер Eco Lite">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/ecol1.jpg" alt="Электроскутер BNP Eco Lite" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
             </div>
             <h3>Электроскутер BNP Eco Lite. Складная конструкция позволяет не только экономить место при хранении, но также делает его удобным для транспортировки в автомобиле.</h3>
             <p class="price">Стоимость: 3600 рублей</p>
@@ -47,5 +47,19 @@
             <p>Дисплей</p>
         </div>
     </div>
+    <script>
+        const images = ["images/ecol1.jpg", "images/ecol2.jpg", "images/ecol3.jpg", "images/ecol1.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
 </body>
 </html>
