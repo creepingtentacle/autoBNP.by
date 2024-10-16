@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электрический трицикл Zevs Ultra Mini - АвтоБНП</title>
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">АвтоБНП</h1>
+    </header>
+    <nav>
+        <a href="trehkolesny.html">Назад</a>
+        <a href="index.html">Главная</a>
+        <a href="dostavka.html">Доставка</a>
+        <a href="oplata.html">Оплата</a>
+        <a href="onas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Электрический трицикл Zevs Ultra Mini</h2>
+        <div class="product-detail">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/zevsmini1.jpg" alt="Электрический трицикл Zevs Ultra Mini" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <h3>Упрощенная версия грузовой модели</h3>
+            <p class="price">Стоимость: 6000 рублей</p>
+            <p>Через финансовых партнеров: от 144 руб. в месяц до пяти лет без предоплат и первых взносов с возможностью досрочного погашения.</p>
+            <p>Вариант рассрочки от нашей компании: 2400 руб. предоплата, оставшаяся сумма на 12 месяцев по 300 рублей.<p>
+            <h3>Характеристики:</h3>
+            <p>Максимальная скорость: до 35 км/ч</p>
+            <p>Мощность электромотора (бесщёточный): 600 W</p>
+            <p>Запас хода до 55км(в зависимости от нагрузки)</p>
+            <p>Допустимая нагрузка: 400 кг</p>
+            <p>Количество мест: 4, имеется возможность перевозки пассажиров в кузове</p>
+            <p>Размер колес: 10-2.75 дюйма (d=40 см) - для уверенного и комфортного движения по любой дороге.</p>
+            <p>Мягкая подвеска - создана для вашего комфорта, чтобы каждая поездка была приятной и уютной.</p>
+            <p>Усиленная стальная вилка</p>
+            <p>Тормоз передний и задний - барабанный, обеспечивающий стабильное и быстрое торможение.</p>
+            <p>Задний ход</p>
+            <p>Освещение: Ближний свет, ходовые и габаритные огни для безопасного передвижения ночью и в условиях плохой видимости.</p>
+            <p>Противоугонная сигнализация: Штатная с двумя брелок-ключами</p>
+            <p>Вес: 80 кг (с батареей)</p>
+            <p>LED-экран: 7 дюймов</p>
+            <p>Откидной кузов</p>
+        </div>
+    </div>
+    <script>
+        const images = ["images/zevsmini1.jpg", "images/zevsmini2.jpg", "images/zevsmini3.jpg", "images/zevsmini4.jpg", "images/zevsmini5.jpg", "images/zevsmini6.jpg", "images/zevsmini7.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
