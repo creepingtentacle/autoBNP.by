@@ -24,9 +24,9 @@
             <div class="gallery">
                 <img id="mainImage" src="images/pixel.jpg" alt="Электроскутер BNP Pixel" class="main-image">
                 <div class="thumbnails">
-                    <img src="images/pixel.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeImage('images/pixel.jpg')">
-                    <img src="images/pixel2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeImage('images/pixel2.jpg')">
-                    <img src="images/pixel3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeImage('images/pixel3.jpg')">
+                    <img src="images/pixel.jpg" alt="Thumbnail 1" class="thumbnail" onclick="openImage('images/pixel.jpg')">
+                    <img src="images/pixel2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="openImage('images/pixel2.jpg')">
+                    <img src="images/pixel3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="openImage('images/pixel3.jpg')">
                 </div>
             </div>
             <h3>Электроскутер BNP Pixel</h3>
@@ -52,8 +52,8 @@
         </div>
     </div>
     <script>
-        function changeImage(src) {
-            document.getElementById('mainImage').src = src;
+        function openImage(src) {
+            window.open(src, '_blank');
         }
     </script>
 </body>
