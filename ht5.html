@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электроскутер BNP CityCoco HT5 - АвтоБНП</title>
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">АвтоБНП</h1>
+    </header>
+    <nav>
+        <a href="dvuhkolesny.html">Назад</a>
+        <a href="index.html">Главная</a>
+        <a href="dostavka.html">Доставка</a>
+        <a href="oplata.html">Оплата</a>
+        <a href="onas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Электроскутер BNP CityCoco HT5</h2>
+        <div class="product-detail">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/ht51.jpg" alt="Электроскутер BNP CityCoco HT5" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <h3>BNP CityCoco HT5— идеальное сочетание стиля и мощи.Благодаря широким колесам, он прекрасно справляется с бездорожьем, обеспечивая плавную и устойчивую поездку по любым поверхностям. Скутер имеет самый большой запас хода, что позволяет наслаждаться долгими поездками без необходимости частой подзарядки.</h3>
+            <p class="price">Стоимость с одной батареей: 7000 рублей</p>
+            <p class="price">Стоимость дополнительной батареи: 1500 рублей</p>
+            <p>Через финансовых партнеров: от 168 руб. в месяц до пяти лет без предоплат и первых взносов с возможностью досрочного погашения.</p>
+            <p>Вариант рассрочки от нашей компании: 2800 руб. предоплата, оставшаяся сумма на 12 месяцев по 350 рублей.<p>
+            <h3>Характеристики:</h3>
+            <p>Максимальная скорость: до 55 км/ч(в зависимости от нагрузки)</p>
+            <p>Мощность электромотора (бесщёточный): 3000 W</p>
+            <p>Батарея быстросъемная: Напряжение 60 V, емкость 20 Ah (Li-ion). Имеется возможность установки двух АКБ</p>
+            <p>апас хода на одном аккумуляторе: до 60км. На двух аккумуляторах до 100-120 км(в зависимости от нагрузки)</p>
+            <p>Допустимая нагрузка: 250 кг</p>
+            <p>Количество мест: 2</p>
+            <p>Круиз-контроль – это функция, которая позволяет поддерживать постоянную скорость без необходимости постоянно держать ручку газа.</p>
+            <p>Усиленная стальная вилка</p>
+            <p>Тип подвески: пружинно-масляный амортизатор: эффективная система помогает поддерживать устойчивость техники на дороге, уменьшая боковые качения и повышая уровень управляемости</p>
+            <p>Тормоза: Передние и задние дисковые гидравлические.</p>
+            <p>Освещение: Ближний\дальний свет, ходовые и габаритные огни для безопасного передвижения ночью и в условиях плохой видимости.</p>
+            <p>Противоугонная сигнализация: Штатная с двумя брелок-ключами</p>
+            <p>Вес 95кг.</p>
+            <p>LED-экран: 9 дюймов</p>
+            <p>Металлическая корзина и кофр на замке идет в комплекте</p>
+        </div>
+        <div class="video-review">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-L4nN89em4A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+    </div>
+    <script>
+        const images = ["images/ht51.jpg", "images/ht52.jpg", "images/ht53.jpg", "images/ht54.jpg", "images/ht55.jpg", "images/ht56.jpg", "images/ht57.jpg", "images/ht58.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
