@@ -83,7 +83,7 @@ button.next {
 /* Style for the product detail section */
 .product-detail {
     text-align: center;
-    font-size: 1.8em; /* Увеличиваем шрифт характеристик в 1.5 раза */
+    font-size: 1.1em; /* Увеличиваем шрифт характеристик в 1.5 раза */
 }
 
 /* Style for the price */
