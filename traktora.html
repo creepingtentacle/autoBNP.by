@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гусеничный минитрактор - АвтоБНП</title>
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">АвтоБНП</h1>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="dostavka.html">Доставка</a>
+        <a href="oplata.html">Оплата</a>
+        <a href="onas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2></h2>
+        <div class="product-detail">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/gus.traktor1.jpg" alt="Гусеничный минитрактор" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <p class="price">Стоимость: 14000 BYN</p>
+            <p>Через финансовых партнеров: от 350 BYN в месяц до пяти лет без предоплат и первых взносов с возможностью досрочного погашения.</p>
+            <p>Вариант рассрочки от нашей компании: 5600 BYN предоплата, оставшаяся сумма на 12 месяцев по 700 BYN.<p>
+            <h3>Характеристики:</h3>
+            <p>Модель двигателя Н35 35 л. с. </p>
+            <p>Тип Двигателя:Дизельный двигатель с электрическим запуском и с водяным охлаждением</p>
+            <p>Тип ходовой части: Гусеничный ход, с возможностью разворота на месте (танковый разворот) </p>
+            <p>Вес: 720кг</p>
+            <p>Габариты: 2300*900*800 мм</p>
+            <p>Размер ротационной обработки почвы (фрезы):900-1000 мм, глубина 250-300 мм.</p>
+            <p>Размер отвала(бульдозера): 900 мм</p>
+            <p>Количество передач: 3+1 (3 вперед, 1 назад)</p>
+            <h2>Применение:</h2>
+            <p>Обработка твердых пород почвы, посевные и уборочные работы, культивация почвы.</p>
+            <p>Распашка почвы и иные работы связанные с обработкой почвы. А так же бульдозерные работы по выравниванию почвы.</p>
+            <p>Очистка территорий от снега.</p>
+        </div>
+    </div>
+    <script>
+        const images = ["images/traktor1.jpg", "images/traktor2.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
