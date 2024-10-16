@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Электроскутер BNP Avant - АвтоБНП</title>
+    <title>Электроскутер BNP Eco - АвтоБНП</title>
     <link rel="stylesheet" href="pixel.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <h1 class="logo">АвтоБНП</h1>
     </header>
     <nav>
-        <a href="dvuhkolesny.html"> Назад</a>
+        <a href="dvuhkolesny.html">Назад</a>
         <a href="index.html">Главная</a>
         <a href="dostavka.html">Доставка</a>
         <a href="oplata.html">Оплата</a>
@@ -21,10 +21,10 @@
     <div class="container">
         <h2>Электроскутер BNP Avant</h2>
         <div class="product-detail">
-            <div class="gallery">
-                <img src="images/avant1.jpg" alt="Электроскутер BNP Avant">
-                <img src="images/avant2.jpg" alt="Электроскутер Avant">
-                <img src="images/avant3.jpg" alt="Электроскутер Avant">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/avant.jpg" alt="Электроскутер BNP Avant" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
             </div>
             <h3>Электроскутер BNP Avant.</h3>
             <p class="price">Акционная стоимость: 5150 рублей</p>
@@ -48,5 +48,19 @@
             <p>Кофр на замке идет в комплекте</p>
         </div>
     </div>
+    <script>
+        const images = ["images/avant1.jpg", "images/avant2.jpg", "images/avant3.jpg", "images/avant1.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
 </body>
 </html>
