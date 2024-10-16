@@ -53,8 +53,8 @@ nav a {
 }
 
 .main-image {
-    width: 80%; /* Увеличиваем изображение обратно */
-    max-width: 600px; /* Ограничиваем максимальную ширину */
+    width: 80%;
+    max-width: 600px;
     margin-bottom: 20px;
 }
 
@@ -77,23 +77,6 @@ button.prev {
 
 button.next {
     right: 0;
-}
-
-.thumbnails {
-    display: flex;
-    flex-direction: column; /* Располагаем вертикально */
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.thumbnail {
-    width: 33.33%; /* Уменьшаем изображения ниже в 3 раза */
-    margin: 5px 0; /* Отступы по вертикали */
-    cursor: pointer;
-}
-
-.thumbnail img {
-    width: 100%;
 }
 
 /* Style for the price */
@@ -151,3 +134,4 @@ button.next {
         box-sizing: border-box;
     }
 }
+``
