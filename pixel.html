@@ -21,13 +21,10 @@
     <div class="container">
         <h2>Электроскутер BNP Pixel</h2>
         <div class="product-detail">
-            <div class="gallery">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
                 <img id="mainImage" src="images/pixel.jpg" alt="Электроскутер BNP Pixel" class="main-image">
-                <div class="thumbnails">
-                    <img src="images/pixel.jpg" alt="Thumbnail 1" class="thumbnail" onclick="openImage('images/pixel.jpg')">
-                    <img src="images/pixel2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="openImage('images/pixel2.jpg')">
-                    <img src="images/pixel3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="openImage('images/pixel3.jpg')">
-                </div>
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
             </div>
             <h3>Электроскутер BNP Pixel</h3>
             <p class="price">Стоимость: 3300 рублей</p>
@@ -52,8 +49,17 @@
         </div>
     </div>
     <script>
-        function openImage(src) {
-            window.open(src, '_blank');
+        const images = ["images/pixel1.jpg", "images/pixel2.jpg", "images/pixel3.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
         }
     </script>
 </body>
