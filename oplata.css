@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --main-bg-color: #f4f4f4;
+    --header-bg-color: #ffffff;
+    --text-color: #333;
+    --accent-color: #8B2C2C;
+    --white: #ffffff;
+    --footer-bg-color: #333;
+    --primary-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--accent-color);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 50px 0;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: var(--accent-color);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+section p {
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.8;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+section ul li {
+    font-size: 1.2em;
+    line-height: 1.8;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+section ul li:before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.back-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.back-button a:hover {
+    background-color: darken(var(--accent-color), 10%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
