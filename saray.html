@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Садовый сарай - АвтоБНП</title>
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">АвтоБНП</h1>
+    </header>
+    <nav>
+        <a href="doma-sada.html">Назад</a>
+        <a href="index.html">Главная</a>
+        <a href="dostavka.html">Доставка</a>
+        <a href="oplata.html">Оплата</a>
+        <a href="onas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Электроскутер BNP Pixel Lite</h2>
+        <div class="product-detail">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/saray1.jpg" alt="Электроскутер BNP Pixel" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <h3>Два размера на выбор 7м² и 9м²</h3>
+            <p class="price">Стоимость 7м²: 2790 BYN</p>
+            <p class="price">Стоимость 9м²: 3290 BYN</p>
+            <p>Через финансовых партнеров: от 70 руб. в месяц до пяти лет без предоплат и первых взносов с возможностью досрочного погашения.</p>
+            <p>Вариант рассрочки от нашей компании: 1126 руб. предоплата, оставшаяся сумма на 12 месяцев по 139,5 рублей.<p>
+            <h3>Характеристики:</h3>
+            <p>Прочная гофрированная стальная панель с двухсторонним покрытием - это значит, что ваш садовый сарай будет надежно защищен от внешних воздействий, не потребует постоянного ухода и будет служить вам долгие годы.</p>
+            <p>Прочные материалы, сталь оцинкованная и П-образный профиль толщиной 0,45 мм - это гарантирует долговечность и надежность вашего сарая, вы можете быть уверены в его прочности.</p>
+            <p>Двускатная усиленная стальная крыша - обеспечит надежную защиту от осадков, снега и ветра. Вы можете быть уверены, что ваши инструменты и растения будут в безопасности.</p>
+            <p>Раздвижные двери с большим проемом - обеспечат удобный доступ ко всем вашим вещам, не создавая затруднений при входе и выходе из сарая.</p>
+            <p>Не требует обслуживания, ремонта или окраски - это экономит ваше время и деньги, вы сможете заниматься садоводством, не думая о том, что нужно провести работы по обслуживанию сарая.</p>
+            <p>Прост в монтаже, сборка за 2-3 часа - вы быстро и легко сможете установить сарай на своей территории, не тратя на это много времени и сил.</p>
+            <p>Хорошая вентиляция для свободного дыхания и предотвращения плесени - ваши вещи будут храниться в оптимальных условиях, что поможет им оставаться в хорошем состоянии.</p>
+            <p>Производитель гарантирует 15 лет защиты от коррозии и выгорания</p>
+        </div>
+    </div>
+    <script>
+        const images = ["images/saray1.jpg", "images/saray2.jpg", "images/saray3.jpg", "images/saray4.jpg", "images/saray5.jpg", "images/saray6.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
