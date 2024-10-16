@@ -11,7 +11,7 @@
         <h1 class="logo">АвтоБНП</h1>
     </header>
     <nav>
-        <a href="dvuhkolesny.html"> Назад</a>
+        <a href="dvuhkolesny.html">Назад</a>
         <a href="index.html">Главная</a>
         <a href="dostavka.html">Доставка</a>
         <a href="oplata.html">Оплата</a>
@@ -22,14 +22,17 @@
         <h2>Электроскутер BNP Pixel</h2>
         <div class="product-detail">
             <div class="gallery">
-                <img src="images/pixel.jpg" alt="Электроскутер BNP Pixel">
-                <img src="images/pixel2.jpg" alt="Электроскутер BNP Pixel">
-                <img src="images/pixel3.jpg" alt="Электроскутер BNP Pixel">
+                <img id="mainImage" src="images/pixel.jpg" alt="Электроскутер BNP Pixel" class="main-image">
+                <div class="thumbnails">
+                    <img src="images/pixel.jpg" alt="Thumbnail 1" class="thumbnail" onclick="changeImage('images/pixel.jpg')">
+                    <img src="images/pixel2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeImage('images/pixel2.jpg')">
+                    <img src="images/pixel3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeImage('images/pixel3.jpg')">
+                </div>
             </div>
             <h3>Электроскутер BNP Pixel</h3>
             <p class="price">Стоимость: 3300 рублей</p>
             <p>Через финансовых партнеров: от 80 руб. в месяц до пяти лет без предоплат и первых взносов с возможностью досрочного погашения.</p>
-            <p>Вариант рассрочки от нашей компании: 1320 руб. предоплата, оставшаяся сумма на 12 месяцев по 165 рублей.<p>
+            <p>Вариант рассрочки от нашей компании: 1320 руб. предоплата, оставшаяся сумма на 12 месяцев по 165 рублей.</p>
             <h3>Характеристики:</h3>
             <p>Максимальная скорость: до 40 км/ч</p>
             <p>Мощность электромотора (бесщёточный): 550 W</p>
@@ -48,5 +51,10 @@
             </div>
         </div>
     </div>
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+    </script>
 </body>
 </html>
