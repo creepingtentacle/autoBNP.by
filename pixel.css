@@ -53,4 +53,96 @@ nav a {
     justify-content: center; /* Центрируем изображение */
 }
 
-.main
+.main-image {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%; /* Закругленные края */
+}
+
+button.prev {
+    left: 10px; /* Устанавливаем отступ слева */
+}
+
+button.next {
+    right: 10px; /* Устанавливаем отступ справа */
+}
+
+/* Style for the product detail section */
+.product-detail {
+    text-align: center;
+    font-size: 1.8em; /* Увеличиваем шрифт характеристик в 1.5 раза */
+}
+
+/* Style for the price */
+.price {
+    font-size: 1.8em; /* Увеличиваем шрифт */
+    color: #8B2C2C;
+    font-weight: bold;
+}
+
+/* Style for the video review */
+.video-review {
+    margin-top: 25px;
+}
+
+/* Media queries for mobile optimization */
+@media (max-width: 768px) {
+    header .logo {
+        font-size: 2.5em; /* Корректируем шрифт на мобильных устройствах */
+    }
+
+    nav a {
+        font-size: 1em; /* Корректируем шрифт на мобильных устройствах */
+        margin: 0 10px; /* Корректируем отступ */
+    }
+
+    .gallery img {
+        width: 80%; /* Корректируем размер изображений на мобильных устройствах */
+    }
+
+    .product-detail {
+        font-size: 1em; /* Корректируем шрифт на мобильных устройствах */
+    }
+
+    .price {
+        font-size: 1.5em; /* Корректируем шрифт на мобильных устройствах */
+    }
+
+    .video-review iframe {
+        width: 100%; /* Занимает всю ширину контейнера */
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+    }
+
+    button.prev, button.next {
+        top: 50%; /* Центрируем кнопки по вертикали */
+        transform: translateY(-50%);
+    }
+}
+
+/* Media queries for desktop optimization */
+@media (min-width: 769px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        flex: 1 0 14%; /* Занимает 1/7 ширины контейнера */
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
