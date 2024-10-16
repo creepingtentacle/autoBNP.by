@@ -53,8 +53,8 @@ nav a {
 }
 
 .main-image {
-    width: 80%;
-    max-width: 600px;
+    width: 20%; /* Уменьшаем изображение */
+    max-width: 150px; /* Ограничиваем максимальную ширину */
     margin-bottom: 20px;
 }
 
@@ -68,7 +68,7 @@ button.prev, button.next {
     padding: 10px;
     cursor: pointer;
     font-size: 1.5em;
-    border-radius: 50%;
+    border-radius: 50%; /* Закругленные края */
 }
 
 button.prev {
@@ -81,13 +81,14 @@ button.next {
 
 .thumbnails {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Располагаем вертикально */
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .thumbnail {
-    width: 100px;
-    margin: 0 5px;
+    width: 25%; /* Уменьшаем изображение в 4 раза */
+    margin: 5px 0; /* Отступы по вертикали */
     cursor: pointer;
 }
 
@@ -119,4 +120,34 @@ button.next {
     }
 
     .gallery img {
-        width: 80%; /* Корректируем размер изображ
+        width: 80%; /* Корректируем размер изображений на мобильных устройствах */
+    }
+
+    .product-detail {
+        font-size: 1em; /* Корректируем шрифт на мобильных устройствах */
+    }
+
+    .price {
+        font-size: 1.5em; /* Корректируем шрифт на мобильных устройствах */
+    }
+
+    .video-review iframe {
+        width: 100%; /* Занимает всю ширину контейнера */
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+    }
+}
+
+/* Media queries for desktop optimization */
+@media (min-width: 769px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        flex: 1 0 14%; /* Занимает 1/7 ширины контейнера */
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
