@@ -91,3 +91,47 @@ nav a {
         height: auto; /* Автоматическая высота для сохранения пропорций */
     }
 }
+
+/* Media queries for desktop optimization */
+@media (min-width: 769px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        flex: 1 0 14%; /* Занимает 1/7 ширины контейнера */
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* Styles for the gallery */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-image {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 100px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100%;
+}
