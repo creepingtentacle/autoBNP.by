@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туалет - АвтоБНП</title>
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">АвтоБНП</h1>
+    </header>
+    <nav>
+        <a href="doma-sada.html">Назад</a>
+        <a href="index.html">Главная</a>
+        <a href="dostavka.html">Доставка</a>
+        <a href="oplata.html">Оплата</a>
+        <a href="onas.html">О нас</a>
+        <a href="kontakty.html">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Туалет</h2>
+        <div class="product-detail">
+            <div class="main-image-wrapper">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <img id="mainImage" src="images/tyalet.jpg" alt="Туалет" class="main-image">
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <h3>При приобретении до конца недели септик на 600л в подарок!</h3>
+            <p class="price">Стоимость туалета: 2190 BYN</p>
+            <p class="price">Стоимость септика: 990 BYN</p>
+            <p>Через финансовых партнеров: от 53 руб. в месяц до пяти лет без предоплат и первых взносов с возможностью досрочного погашения.</p>
+            <p>Вариант рассрочки от нашей компании: 876 руб. предоплата, оставшаяся сумма на 12 месяцев по 109,5 рублей.<p>
+            <h3>Характеристики:</h3>
+            <p>Материалы: комбинированные панели, состоящие из двух внешних слоев пластика и внутреннего слоя из пенополистирола (EPS).</p>
+            <p>Преимущества: теплоизоляция, звукоизоляция, легкость, долговечность и надежность</p>
+            <p>Унитаз: легкий, прочный и легко моющийся.</p>
+            <p>Раковина: компактная раковина из нержавеющей стали, оптимальная для установки в ограниченном пространстве.</p>
+            <p>Вентиляция: обновленная система для предотвращения неприятных запахов и поддержания свежести воздуха внутри.</p>
+            <p>Дверь из EPS панелей. Габариты 0,6м х 1,8м</p>
+            <p>Габарииты туалета: высота: 2,3 м, ширина: 1,1 м, глубина: 1,1 м</p>
+            <p>Био-туалет является быстро сборным, что позволяет сэкономить время и усилия при его установке.Инструкция и все комплектующие идут в комплекте, что делает установку еще проще и удобнее.</p>
+            <h4>Пластиковый септик</h4>
+            <p>Габариты: длина1,6м; ширина 0,83м.</p>
+            <p>Изготовлен из высококачественного пластика, устойчивого к механическим повреждениям и деформации.</p>
+            <p>Пластик устойчив к коррозии и воздействию химических веществ, что обеспечивает долгий срок службы.</p>
+            <p>Благодаря гладким стенкам и эргономичному дизайну, септик легко очищается и обслуживается.</p>
+        </div>
+    </div>
+    <script>
+        const images = ["images/tyalet.jpg", "images/tyalet2.jpg", "images/tyalet3.jpg"];
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.getElementById('mainImage').src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
