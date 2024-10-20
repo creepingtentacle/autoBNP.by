@@ -15,11 +15,56 @@ header {
     padding: 20px 10px;
     background: rgba(128, 0, 0, 0.8); /* Оставляем прежний цвет */
     color: #fff;
+    position: relative; /* Для анимации квадратиков */
+    overflow: hidden; /* Для анимации квадратиков */
 }
 
 .logo {
     font-size: 2em;
     font-weight: bold;
+}
+
+/* Анимация для падающих квадратиков */
+@keyframes fall {
+    0% {
+        top: -50px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.square {
+    position: absolute;
+    background: rgba(255, 0, 0, 0.5); /* Другой оттенок красного */
+    animation: fall 5s infinite;
+    z-index: 1;
+}
+
+.square.small {
+    width: 10px;
+    height: 10px;
+    left: 25%;
+    animation-duration: 4s;
+}
+
+.square.medium {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 5s;
+}
+
+.square.large {
+    width: 30px;
+    height: 30px;
+    left: 75%;
+    animation-duration: 6s;
 }
 
 nav {
@@ -97,6 +142,17 @@ nav a:hover::before {
     border-radius: 15px; /* Закругленные углы */
 }
 
+/* Волновая анимация для кнопок каталога */
+.category-btn:hover, .product a:hover {
+    background-color: #B32821;
+    color: #fff;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, #fff 50%);
+    background-size: 200%;
+    animation: wave 1s infinite;
+}
+
 .category-btn img, .product img {
     width: 100%;
     height: auto;
@@ -120,26 +176,6 @@ nav a:hover::before {
     font-weight: 700;
 }
 
-/* Анимация для кнопок каталога при наведении */
-.category-btn:hover, .product a:hover {
-    background-color: #B32821;
-    color: #fff;
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-/* Волновая анимация для кнопок меню */
-@keyframes wave {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-nav a:hover::before {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 50%, #fff 50%);
-    background-size: 200%;
-    animation: wave 1s infinite;
-}
-
 button:focus, a:focus {
     outline: none;
     box-shadow: none;
@@ -152,25 +188,4 @@ button:focus, a:focus {
     }
 }
 
-@media (max-width: 768px) {
-    header {
-        padding: 25px 20px; /* Увеличена высота верхней шапки */
-    }
-    header .logo {
-        font-size: 1.5em;
-    }
-    nav {
-        flex-direction: column;
-    }
-    nav a {
-        font-size: 1em;
-        padding: 10px;
-    }
-    .container {
-        grid-template-columns: 1fr; /* Один в ряд для мобильных устройств */
-        padding: 20px 10px;
-    }
-    .category, .product {
-        margin-bottom: 20px;
-    }
-}
+@media (max
