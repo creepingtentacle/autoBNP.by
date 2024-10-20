@@ -13,57 +13,71 @@ body {
 header {
     text-align: center;
     padding: 20px 10px;
-    background: rgba(128, 0, 0, 0.8); /* Оставляем прежний цвет */
+    background: rgba(179, 40, 33, 0.8); /* Красный цвет */
     color: #fff;
     position: relative;
     overflow: hidden;
 }
 
-header::before, header::after, header .wave {
-    position: absolute;
-    content: '';
-    top: -50px;
-    left: -50px;
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: fall 10s linear infinite;
-}
-
-header::after {
-    top: -30px;
-    left: 30px;
-    width: 80px;
-    height: 80px;
-    animation-duration: 15s;
-}
-
-header .wave {
-    top: -70px;
-    left: 80px;
-    width: 60px;
-    height: 60px;
-    animation-duration: 20s;
-}
-
-@keyframes fall {
-    0% { top: -100px; opacity: 1; }
-    100% { top: 100%; opacity: 0; }
-}
-
 .logo {
     font-size: 2em;
     font-weight: bold;
+    position: relative; /* Для кругов вокруг логотипа */
+    z-index: 1;
+}
+
+.circle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatDown 10s infinite linear;
+}
+
+.circle.small {
+    width: 20px;
+    height: 20px;
+}
+
+.circle.medium {
+    width: 40px;
+    height: 40px;
+}
+
+.circle.large {
+    width: 60px;
+    height: 60px;
+}
+
+.circle:nth-child(1) {
+    top: -30px;
+    left: 10%;
+}
+
+.circle:nth-child(2) {
+    top: -30px;
+    right: 20%;
+}
+
+.circle:nth-child(3) {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes floatDown {
+    0% { top: -10%; opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { top: 110%; opacity: 0; }
 }
 
 nav {
     display: flex;
     justify-content: center;
-    background: #504e4e; /* Новый цвет */
+    background: #504e4e; /* Цвет рамки */
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0; /* Убираем закругленные края */
+    border-radius: 0; /* Обычные края */
 }
 
 nav a {
@@ -76,7 +90,7 @@ nav a {
     transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
-    border-radius: 0; /* Убираем закругленные края */
+    border-radius: 15px; /* Закругленные края */
 }
 
 nav a:hover {
@@ -97,4 +111,80 @@ nav a::before {
     opacity: 0;
 }
 
-nav a:hover
+nav a:hover::before {
+    height: 100%;
+    opacity: 0.2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три в ряд */
+    gap: 20px;
+    padding: 20px;
+}
+
+.category, .product {
+    text-align: center;
+    background: #fff;
+    border-radius: 15px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.category:hover, .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-btn, .product a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px; /* Закругленные углы */
+}
+
+.category-btn img, .product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    border-radius: 15px 15px 0 0; /* Закругленные углы */
+}
+
+.category-btn span, .product h3 {
+    display: block;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #B32821;
+}
+
+.product p {
+    margin: 10px 0;
+}
+
+.product .price {
+    color: #490808;
+    font-weight: 700;
+}
+
+/* Волновая анимация для кнопок каталога */
+.category-btn:hover, .product a:hover {
+    background-color: rgba(179, 40, 33, 0.2);
+    color: #fff;
+    transform: scale(1.05);
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.category-btn:hover::before, .product a:hover::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #B32821;
+    transition
