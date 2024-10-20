@@ -16,40 +16,45 @@ header {
     background: rgba(128, 0, 0, 0.8); /* Оставляем прежний цвет */
     color: #fff;
     position: relative;
+    overflow: hidden;
+}
+
+header::before, header::after, header .wave {
+    position: absolute;
+    content: '';
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: fall 10s linear infinite;
+}
+
+header::after {
+    top: -30px;
+    left: 30px;
+    width: 80px;
+    height: 80px;
+    animation-duration: 15s;
+}
+
+header .wave {
+    top: -70px;
+    left: 80px;
+    width: 60px;
+    height: 60px;
+    animation-duration: 20s;
+}
+
+@keyframes fall {
+    0% { top: -100px; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
 }
 
 .logo {
     font-size: 2em;
     font-weight: bold;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-100px); opacity: 0; }
-    100% { transform: translateY(100vh); opacity: 1; }
-}
-
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25%;
-    width: 10px;
-    height: 10px;
-    background: rgba(165, 0, 0, 0.6);
-    animation: fall 5s infinite linear;
-    animation-delay: 0s;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 75%;
-    width: 15px;
-    height: 15px;
-    background: rgba(255, 0, 0, 0.6);
-    animation: fall 5s infinite linear;
-    animation-delay: 2s;
 }
 
 nav {
@@ -58,6 +63,7 @@ nav {
     background: #504e4e; /* Новый цвет */
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0; /* Убираем закругленные края */
 }
 
 nav a {
@@ -70,6 +76,7 @@ nav a {
     transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
+    border-radius: 0; /* Убираем закругленные края */
 }
 
 nav a:hover {
@@ -90,78 +97,4 @@ nav a::before {
     opacity: 0;
 }
 
-nav a:hover::before {
-    height: 100%;
-    opacity: 0.2;
-}
-
-@keyframes wave {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-nav a:hover::before {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 50%, #fff 50%);
-    background-size: 200%;
-    animation: wave 1s infinite;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три в ряд */
-    gap: 20px;
-    padding: 20px;
-}
-
-.category, .product {
-    text-align: center;
-    background: #fff;
-    border-radius: 0; /* Убираем скругленные углы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.category:hover, .product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.category-btn, .product a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 0; /* Убираем скругленные углы */
-}
-
-.category-btn img, .product img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0; /* Убираем скругленные углы */
-}
-
-.category-btn span, .product h3 {
-    display: block;
-    margin-top: 10px;
-    font-weight: 700;
-    color: #B32821;
-}
-
-.product p {
-    margin: 10px 0;
-}
-
-.product .price {
-    color: #490808;
-    font-weight: 700;
-}
-
-/* Анимация для кнопок каталога при наведении */
-.category-btn:hover, .product a:hover {
-    background-color: #B32821;
-    color: #fff;
-    transform: scale(1.05);
-    transition
+nav a:hover
