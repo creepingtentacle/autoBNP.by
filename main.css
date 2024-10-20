@@ -1,131 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+:root {
+    --primary-color: #ff4500;
+    --secondary-color: #ffd700;
+    --font-family: 'Poppins', sans-serif; /* Обновленный шрифт */
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+}
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: url('images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
 header {
+    background-color: var(--primary-color);
+    color: white;
     text-align: center;
-    padding: 20px 10px;
-    background: rgba(128, 0, 0, 0.8);
-    color: #fff;
+    padding: 1.5rem 0;
 }
 
 .logo {
-    font-size: 2em;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    background: #000;
-    padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
 }
 
 nav a {
-    color: #fff;
-    padding: 14px 20px;
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    transition: color 0.3s ease-in-out;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: #ff4081;
-}
-
-nav a:focus, nav a:hover {
-    outline: none;
-    box-shadow: none;
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.category {
-    text-align: center;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.category:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
 }
 
 .category-btn {
     display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 20px;
+    text-align: center;
+    background-color: white;
+    padding: 1.5rem;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .category-btn img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
 }
 
 .category-btn span {
     display: block;
-    margin-top: 10px;
-    font-weight: 700;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
 }
 
-button:focus, a:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-/* Медиа-запросы для адаптации на мобильных устройствах */
-@media (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
+/* Анимации и эффекты */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 768px) {
-    header .logo {
-        font-size: 1.5em;
-    }
+.category-btn {
+    animation: fadeIn 0.5s ease forwards;
+}
 
-    nav {
-        flex-direction: column;
-    }
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+}
 
-    nav a {
-        font-size: 1em;
-        padding: 10px;
-    }
-
-    .container {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-
-    .category {
-        margin-bottom: 20px;
-    }
-
-    .category-btn {
-        padding: 10px;
-    }
+nav a:hover::after {
+    width: 100%;
 }
