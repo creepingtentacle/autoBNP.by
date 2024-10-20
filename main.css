@@ -15,8 +15,7 @@ header {
     padding: 20px 10px;
     background: rgba(128, 0, 0, 0.8); /* Оставляем прежний цвет */
     color: #fff;
-    position: relative; /* Для анимации квадратиков */
-    overflow: hidden; /* Для анимации квадратиков */
+    position: relative;
 }
 
 .logo {
@@ -24,47 +23,33 @@ header {
     font-weight: bold;
 }
 
-/* Анимация для падающих квадратиков */
 @keyframes fall {
-    0% {
-        top: -50px;
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        top: 100%;
-        opacity: 0;
-    }
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(100vh); opacity: 1; }
 }
 
-.square {
+header::after {
+    content: '';
     position: absolute;
-    background: rgba(255, 0, 0, 0.5); /* Другой оттенок красного */
-    animation: fall 5s infinite;
-    z-index: 1;
-}
-
-.square.small {
+    top: 0;
+    left: 25%;
     width: 10px;
     height: 10px;
-    left: 25%;
-    animation-duration: 4s;
+    background: rgba(165, 0, 0, 0.6);
+    animation: fall 5s infinite linear;
+    animation-delay: 0s;
 }
 
-.square.medium {
-    width: 20px;
-    height: 20px;
-    left: 50%;
-    animation-duration: 5s;
-}
-
-.square.large {
-    width: 30px;
-    height: 30px;
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
     left: 75%;
-    animation-duration: 6s;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 0, 0, 0.6);
+    animation: fall 5s infinite linear;
+    animation-delay: 2s;
 }
 
 nav {
@@ -73,7 +58,6 @@ nav {
     background: #504e4e; /* Новый цвет */
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 15px; /* Закругленные края рамки */
 }
 
 nav a {
@@ -86,7 +70,6 @@ nav a {
     transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
-    border-radius: 15px; /* Закругленные края */
 }
 
 nav a:hover {
@@ -112,6 +95,17 @@ nav a:hover::before {
     opacity: 0.2;
 }
 
+@keyframes wave {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+nav a:hover::before {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 50%, #fff 50%);
+    background-size: 200%;
+    animation: wave 1s infinite;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -124,7 +118,7 @@ nav a:hover::before {
 .category, .product {
     text-align: center;
     background: #fff;
-    border-radius: 15px; /* Закругленные углы */
+    border-radius: 0; /* Убираем скругленные углы */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -139,25 +133,14 @@ nav a:hover::before {
     color: #333;
     text-decoration: none;
     padding: 20px;
-    border-radius: 15px; /* Закругленные углы */
-}
-
-/* Волновая анимация для кнопок каталога */
-.category-btn:hover, .product a:hover {
-    background-color: #B32821;
-    color: #fff;
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, #fff 50%);
-    background-size: 200%;
-    animation: wave 1s infinite;
+    border-radius: 0; /* Убираем скругленные углы */
 }
 
 .category-btn img, .product img {
     width: 100%;
     height: auto;
     border-bottom: 1px solid #ddd;
-    border-radius: 15px 15px 0 0; /* Закругленные углы */
+    border-radius: 0; /* Убираем скругленные углы */
 }
 
 .category-btn span, .product h3 {
@@ -176,16 +159,9 @@ nav a:hover::before {
     font-weight: 700;
 }
 
-button:focus, a:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-/* Медиа-запросы для адаптации на мобильных устройствах */
-@media (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr); /* Два в ряд для планшетов */
-    }
-}
-
-@media (max
+/* Анимация для кнопок каталога при наведении */
+.category-btn:hover, .product a:hover {
+    background-color: #B32821;
+    color: #fff;
+    transform: scale(1.05);
+    transition
