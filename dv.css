@@ -98,7 +98,7 @@ nav a:hover::after {
     max-width: 1200px; /* Максимальная ширина контейнера */
     margin: 0 auto; /* Центрирование контейнера */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три в ряд */
+    grid-template-columns: repeat(4, 1fr); /* Четыре в ряд */
     gap: 20px; /* Расстояние между элементами */
     padding: 20px;
 }
