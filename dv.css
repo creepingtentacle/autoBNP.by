@@ -25,9 +25,10 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background: #000;
+    background: #5c6070; /* Цвет рамки */
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Закругленные края рамки */
 }
 
 nav a {
@@ -40,11 +41,11 @@ nav a {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
-    border-radius: 15px; /* Добавлено округлое выделение кнопок */
+    border-radius: 15px; /* Закругленные края */
 }
 
 nav a:hover {
-    background-color: rgba(179, 40, 33, 0.2); /* Прозрачно-красный при наведении */
+    background-color: rgba(128, 128, 128, 0.2); /* Прозрачно-серый при наведении */
     color: #B32821;
 }
 
@@ -98,7 +99,7 @@ nav a:hover::after {
     max-width: 1200px; /* Максимальная ширина контейнера */
     margin: 0 auto; /* Центрирование контейнера */
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Четыре в ряд */
+    grid-template-columns: repeat(3, 1fr); /* Три в ряд */
     gap: 20px; /* Расстояние между элементами */
     padding: 20px;
 }
@@ -119,76 +120,3 @@ nav a:hover::after {
 
 .category-btn, .product a {
     display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 15px; /* Закругленные углы */
-}
-
-.category-btn img, .product img {
-    width: 100%;
-    height: auto;
-    max-height: 150px; /* Ограничиваем высоту изображений */
-    object-fit: contain; /* Обеспечиваем полное отображение изображения */
-    border-bottom: 1px solid #ddd;
-    border-radius: 15px 15px 0 0; /* Закругленные углы */
-}
-
-.category-btn span, .product h3 {
-    display: block;
-    margin-top: 10px;
-    font-weight: 700;
-    color: #B32821;
-}
-
-.product p {
-    margin: 10px 0;
-}
-
-.product .price {
-    color: #490808;
-    font-weight: 700;
-}
-
-/* Анимация для кнопок каталога при наведении */
-.category-btn:hover, .product a:hover {
-    background-color: #B32821;
-    color: #fff;
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-button:focus, a:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-/* Медиа-запросы для адаптации на мобильных устройствах */
-@media (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr); /* Два в ряд для планшетов */
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 25px 20px; /* Увеличена высота верхней шапки */
-    }
-    header .logo {
-        font-size: 1.5em;
-    }
-    nav {
-        flex-direction: column;
-    }
-    nav a {
-        font-size: 1em;
-        padding: 10px;
-    }
-    .container {
-        grid-template-columns: 1fr; /* Один в ряд для мобильных устройств */
-        padding: 20px 10px;
-    }
-    .category, .product {
-        margin-bottom: 20px;
-    }
-}
