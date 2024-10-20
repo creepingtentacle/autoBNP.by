@@ -13,7 +13,7 @@ body {
 header {
     text-align: center;
     padding: 20px 10px;
-    background: rgba(128, 0, 0, 0.8);
+    background: rgba(179, 40, 33, 0.8); /* Кораллово-красный */
     color: #fff;
 }
 
@@ -37,12 +37,14 @@ nav a {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.1em;
-    transition: color 0.3s ease-in-out;
-    border-radius: 15px; /* Добавлено округлое выделение кнопок */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
 nav a:hover {
-    color: #ff4081;
+    background-color: rgba(179, 40, 33, 0.2); /* Прозрачно-красный при наведении */
+    color: #B32821;
 }
 
 nav a:focus, nav a:hover {
@@ -50,16 +52,55 @@ nav a:focus, nav a:hover {
     box-shadow: none;
 }
 
+nav a:active {
+    background-color: #d3d3d3; /* Светло-серый при нажатии */
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #B32821;
+    transition: height 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+nav a:hover::before {
+    height: 100%;
+    opacity: 0.2;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: 0;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle, #B32821 10%, transparent 10.01%);
+    background-size: 2px 2px;
+    opacity: 0.2;
+    transition: transform 0.5s;
+    transform: translateX(-50%) scaleX(0);
+}
+
+nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
 .container {
-    max-width: 1200px; /* Максимальная ширина контейнера */
-    margin: 0 auto; /* Центрирование контейнера */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-.category, .product {
+.category {
     text-align: center;
     background: #fff;
     border-radius: 10px;
@@ -67,12 +108,12 @@ nav a:focus, nav a:hover {
     transition: transform 0.3s ease-in-out;
 }
 
-.category:hover, .product:hover {
+.category:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.category-btn, .product a {
+.category-btn {
     display: block;
     color: #333;
     text-decoration: none;
@@ -80,29 +121,25 @@ nav a:focus, nav a:hover {
     border-radius: 10px;
 }
 
-.category-btn img, .product img {
+.category-btn img {
     width: 100%;
     height: auto;
-    max-height: 150px; /* Ограничиваем высоту изображений */
-    object-fit: contain; /* Обеспечиваем полное отображение изображения */
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
 }
 
-.category-btn span, .product h3 {
+.category-btn span {
     display: block;
     margin-top: 10px;
     font-weight: 700;
-    color: #800000;
 }
 
-.product p {
-    margin: 10px 0;
-}
-
-.product .price {
-    color: #4b0e0e;
-    font-weight: 700;
+/* Анимация для кнопок каталога при наведении */
+.category-btn:hover {
+    background-color: #B32821;
+    color: #fff;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 button:focus, a:focus {
@@ -114,38 +151,28 @@ button:focus, a:focus {
 @media (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
-        padding: 20px 10px; /* Увеличены отступы справа */
     }
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 30px 20px; /* Увеличена высота верхней шапки */
-    }
-    
     header .logo {
         font-size: 1.5em;
     }
-
     nav {
         flex-direction: column;
     }
-
     nav a {
         font-size: 1em;
         padding: 10px;
     }
-
     .container {
         grid-template-columns: 1fr;
-        padding: 20px 10px; /* Увеличены отступы справа */
+        padding: 10px;
     }
-
-    .category, .product {
+    .category {
         margin-bottom: 20px;
     }
-}
-    .category, .product {
-        margin-bottom: 20px;
+    .category-btn {
+        padding: 10px;
     }
 }
