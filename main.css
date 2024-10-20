@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 body {
     font-family: 'Inter', sans-serif;
     background: url('images/background.jpg') no-repeat center center fixed;
@@ -64,9 +66,17 @@ header {
 }
 
 @keyframes floatDown {
-    0% { top: -10%; opacity: 0; }
-    50% { opacity: 0.6; }
-    100% { top: 110%; opacity: 0; }
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
 }
 
 nav {
@@ -169,7 +179,7 @@ nav a:hover::before {
 
 /* Волновая анимация для кнопок каталога */
 .category-btn:hover, .product a:hover {
-    background-color: rgba(179, 40, 33, 0.2);
+    background-color: rgba(211, 211, 211, 0.8); /* Светло-серый цвет при наведении */
     color: #fff;
     transform: scale(1.05);
     border-radius: 15px;
@@ -297,7 +307,6 @@ nav a:hover::before {
         opacity: 0;
     }
 }
-
 button:focus, a:focus {
     outline: none;
     box-shadow: none;
@@ -332,3 +341,6 @@ button:focus, a:focus {
         margin-bottom: 20px;
     }
 }
+
+
+
