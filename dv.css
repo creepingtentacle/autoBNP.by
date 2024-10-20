@@ -40,7 +40,7 @@ nav a {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 15px; /* Добавлено округлое выделение кнопок */
 }
 
 nav a:hover {
@@ -98,17 +98,18 @@ nav a:hover::after {
     max-width: 1200px; /* Максимальная ширина контейнера */
     margin: 0 auto; /* Центрирование контейнера */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Уменьшаем масштаб */
-    gap: 15px; /* Уменьшаем отступы */
-    padding: 15px; /* Уменьшаем отступы */
+    grid-template-columns: repeat(3, 1fr); /* Три в ряд */
+    gap: 20px; /* Расстояние между элементами */
+    padding: 20px;
 }
 
 .category, .product {
     text-align: center;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 15px; /* Закругленные углы */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    aspect-ratio: 1 / 1; /* Квадратная форма */
 }
 
 .category:hover, .product:hover {
@@ -120,17 +121,17 @@ nav a:hover::after {
     display: block;
     color: #333;
     text-decoration: none;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 15px; /* Закругленные углы */
 }
 
 .category-btn img, .product img {
     width: 100%;
     height: auto;
-    max-height: 150px;
-    object-fit: contain;
+    max-height: 150px; /* Ограничиваем высоту изображений */
+    object-fit: contain; /* Обеспечиваем полное отображение изображения */
     border-bottom: 1px solid #ddd;
-    border-radius: 10px 10px 0 0;
+    border-radius: 15px 15px 0 0; /* Закругленные углы */
 }
 
 .category-btn span, .product h3 {
@@ -165,8 +166,7 @@ button:focus, a:focus {
 /* Медиа-запросы для адаптации на мобильных устройствах */
 @media (max-width: 1024px) {
     .container {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px 10px; /* Увеличены отступы справа */
+        grid-template-columns: repeat(2, 1fr); /* Два в ряд для планшетов */
     }
 }
 
@@ -185,8 +185,8 @@ button:focus, a:focus {
         padding: 10px;
     }
     .container {
-        grid-template-columns: 1fr;
-        padding: 15px 10px; /* Увеличены отступы справа */
+        grid-template-columns: 1fr; /* Один в ряд для мобильных устройств */
+        padding: 20px 10px;
     }
     .category, .product {
         margin-bottom: 20px;
