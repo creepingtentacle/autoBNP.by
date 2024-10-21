@@ -136,7 +136,7 @@
             return v.array;
         };
 
-        // Оставшиеся вспомогательные функции...
+        // Remaining utility functions...
         // Initialize WebGL and shaders
         function initWebGL() {
             var canvas = document.getElementById('sakura');
@@ -181,7 +181,6 @@
             var vertexPosition = gl.getAttribLocation(shaderProgram, "aPosition");
             gl.enableVertexAttribArray(vertexPosition);
             gl.vertexAttribPointer(vertexPosition, 3, gl.FLOAT, false, 0, 0);
-
             // Draw the scene
             function drawScene() {
                 gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -191,6 +190,7 @@
 
             drawScene();
         }
+
         function getShader(gl, id) {
             var shaderScript = document.getElementById(id);
             if (!shaderScript) {
@@ -237,4 +237,3 @@
     </script>
 </body>
 </html>
-
