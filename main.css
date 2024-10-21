@@ -49,6 +49,7 @@ header {
     height: 60px;
 }
 
+/* Круги с левой стороны */
 .circle:nth-child(1) {
     top: -30px;
     left: 10%;
@@ -56,13 +57,28 @@ header {
 
 .circle:nth-child(2) {
     top: -30px;
-    right: 20%;
+    left: 20%;
 }
 
 .circle:nth-child(3) {
     top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 30%;
+}
+
+/* Круги с правой стороны */
+.circle:nth-child(4) {
+    top: -30px;
+    right: 10%;
+}
+
+.circle:nth-child(5) {
+    top: -30px;
+    right: 20%;
+}
+
+.circle:nth-child(6) {
+    top: -30px;
+    right: 30%;
 }
 
 @keyframes floatDown {
@@ -71,7 +87,7 @@ header {
         opacity: 0;
     }
     50% {
-        opacity: 0.6;
+        opacity: 6;
     }
     100% {
         top: 110%;
@@ -179,7 +195,7 @@ nav a:hover::before {
 
 /* Волновая анимация для кнопок каталога */
 .category-btn:hover, .product a:hover {
-    background-color: rgba(211, 211, 211, 0.8); /* Светло-серый цвет при наведении */
+    background-color: rgba(50, 50, 50, 0.8); /* Прозрачно темно-серый цвет при наведении */
     color: #fff;
     transform: scale(1.05);
     border-radius: 15px;
@@ -202,6 +218,22 @@ nav a:hover::before {
 .category-btn:hover::before, .product a:hover::before {
     height: 100%;
     opacity: 0.2;
+}
+
+/* Трендовая анимация для кнопок */
+@keyframes trendyAnim {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.category-btn:hover, .product a:hover {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200%;
+    animation: trendyAnim 1s infinite;
 }
 
 /* Анимация падающих квадратов */
