@@ -148,14 +148,6 @@ nav a:hover::before {
     position: relative;
     overflow: hidden;
 }
-canvas#sakura {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Фон сакуры */
-}
 
 .category, .product {
     text-align: center;
@@ -218,54 +210,84 @@ canvas#sakura {
 }
 
 .category-btn:hover::before, .product a:hover::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: #B32821;
-    transition: height 0.3s, opacity 0.3s;
-    opacity: 0;
-}
-
-.category-btn:hover::before, .product a:hover::before {
     height: 100%;
     opacity: 0.2;
 }
 
-button:focus, a:focus {
-    outline: none;
-    box-shadow: none;
+/* Волновая анимация для кнопок каталога */
+.category-btn:hover, .product a:hover {
+    background-color: rgba(50, 50, 50, 0.8); /* Прозрачно темно-серый цвет при наведении */
+    color: #fff;
+    transform: scale(1.05);
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-/* Медиа-запросы для адаптации на мобильных устройствах */
-@media (max-width: 1024px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr); /* Два в ряд для планшетов */
-    }
+/* Анимация плавающих кругов */
+.circle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatDown 10s infinite linear;
 }
 
-@media (max-width: 768px) {
-    header {
-        padding: 25px 20px; /* Увеличена высота верхней шапки */
+.circle.small {
+    width: 20px;
+    height: 20px;
+}
+
+.circle.medium {
+    width: 40px;
+    height: 40px;
+}
+
+.circle.large {
+    width: 60px;
+    height: 60px;
+}
+
+.circle:nth-child(1) {
+    top: -30px;
+    left: 10%;
+}
+
+.circle:nth-child(2) {
+    top: -30px;
+    right: 20%;
+}
+
+.circle:nth-child(3) {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle:nth-child(4) {
+    top: -30px;
+    right: 10%;
+}
+
+.circle:nth-child(5) {
+    top: -30px;
+    left: 20%;
+}
+
+.circle:nth-child(6) {
+    top: -30px;
+    right: 30%;
+}
+
+@keyframes floatDown {
+    0% {
+        top: -10%;
+        opacity: 0;
     }
-    header .logo {
-        font-size: 1.5em;
+    50% {
+        opacity: 0.6;
     }
-    nav {
-        flex-direction: column;
-    }
-    nav a {
-        font-size: 1em;
-        padding: 10px;
-    }
-    .container {
-        grid-template-columns: 1fr; /* Один в ряд для мобильных устройств */
-        padding: 20px 10px;
-    }
-    .category, .product {
-        margin-bottom: 20px;
+    100% {
+        top: 110%;
+        opacity: 0;
     }
 }
