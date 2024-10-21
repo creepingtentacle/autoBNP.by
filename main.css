@@ -13,7 +13,7 @@ body {
 header {
     text-align: center;
     padding: 20px 10px;
-    background: rgba(179, 40, 33, 0.8); /* Красный цвет */
+    background: rgba(179, 40, 33, 0.8); /* Темно-красный */
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -49,7 +49,6 @@ header {
     height: 60px;
 }
 
-/* Круги с левой стороны */
 .circle:nth-child(1) {
     top: -30px;
     left: 10%;
@@ -57,15 +56,15 @@ header {
 
 .circle:nth-child(2) {
     top: -30px;
-    left: 20%;
+    right: 20%;
 }
 
 .circle:nth-child(3) {
     top: -30px;
-    left: 30%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Круги с правой стороны */
 .circle:nth-child(4) {
     top: -30px;
     right: 10%;
@@ -73,7 +72,7 @@ header {
 
 .circle:nth-child(5) {
     top: -30px;
-    right: 20%;
+    left: 20%;
 }
 
 .circle:nth-child(6) {
@@ -87,7 +86,7 @@ header {
         opacity: 0;
     }
     50% {
-        opacity: 6;
+        opacity: 0.6;
     }
     100% {
         top: 110%;
@@ -101,7 +100,6 @@ nav {
     background: #504e4e; /* Серый цвет рамки меню */
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0; /* Обычные края */
 }
 
 nav a {
@@ -111,15 +109,14 @@ nav a {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.1em;
-    transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
-    border-radius: 15px; /* Закругленные края */
 }
 
 nav a:hover {
     background-color: rgba(128, 128, 128, 0.2); /* Прозрачно-серый при наведении */
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 nav a::before {
@@ -152,7 +149,7 @@ nav a:hover::before {
 .category, .product {
     text-align: center;
     background: #fff;
-    border-radius: 15px; /* Закругленные углы */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -167,21 +164,23 @@ nav a:hover::before {
     color: #333;
     text-decoration: none;
     padding: 20px;
-    border-radius: 15px; /* Закругленные углы */
+    border-radius: 10px;
 }
 
 .category-btn img, .product img {
     width: 100%;
     height: auto;
+    max-height: 150px;
+    object-fit: contain;
     border-bottom: 1px solid #ddd;
-    border-radius: 15px 15px 0 0; /* Закругленные углы */
+    border-radius: 10px 10px 0 0;
 }
 
 .category-btn span, .product h3 {
     display: block;
     margin-top: 10px;
     font-weight: 700;
-    color: #B32821;
+    color: #000; /* Черный цвет текста */
 }
 
 .product p {
@@ -220,119 +219,68 @@ nav a:hover::before {
     opacity: 0.2;
 }
 
-/* Трендовая анимация для кнопок */
-@keyframes trendyAnim {
-    0% {
-        background-position: 200% 0;
-    }
-    100% {
-        background-position: -200% 0;
-    }
-}
-
-.category-btn:hover, .product a:hover {
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 50%);
-    background-size: 200%;
-    animation: trendyAnim 1s infinite;
-}
-
-/* Анимация падающих квадратов */
-.square {
+/* Анимация плавающих кругов */
+.circle {
     position: absolute;
     background: rgba(255, 255, 255, 0.5);
-    border-radius: 25%; /* Закругленные квадраты */
-    opacity: 0.8;
-    animation: fallDown 10s infinite linear;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatDown 10s infinite linear;
 }
 
-.square.small {
+.circle.small {
+    width: 20px;
+    height: 20px;
+}
+
+.circle.medium {
     width: 40px;
     height: 40px;
 }
 
-.square.medium {
+.circle.large {
     width: 60px;
     height: 60px;
 }
 
-.square.large {
-    width: 80px;
-    height: 80px;
-}
-
-.square:nth-child(1) {
-    top: -40px;
+.circle:nth-child(1) {
+    top: -30px;
     left: 10%;
 }
 
-.square:nth-child(2) {
-    top: -50px;
+.circle:nth-child(2) {
+    top: -30px;
     right: 20%;
 }
 
-.square:nth-child(3) {
-    top: -60px;
+.circle:nth-child(3) {
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.square:nth-child(4) {
-    top: -40px;
+.circle:nth-child(4) {
+    top: -30px;
     right: 10%;
 }
 
-.square:nth-child(5) {
-    top: -50px;
+.circle:nth-child(5) {
+    top: -30px;
     left: 20%;
 }
 
-.square:nth-child(6) {
-    top: -60px;
+.circle:nth-child(6) {
+    top: -30px;
     right: 30%;
 }
 
-.square:nth-child(7) {
-    top: -40px;
-    left: 40%;
-}
-
-.square:nth-child(8) {
-    top: -50px;
-    right: 40%;
-}
-
-.square:nth-child(9) {
-    top: -60px;
-    left: 60%;
-}
-
-.square:nth-child(10) {
-    top: -40px;
-    right: 50%;
-}
-
-.square:nth-child(11) {
-    top: -50px;
-    left: 70%;
-}
-
-.square:nth-child(12) {
-    top: -60px;
-    right: 60%;
-}
-
-.square:nth-child(13) {
-    top: -40px;
-    left: 80%;
-}
-
-@keyframes fallDown {
+@keyframes floatDown {
     0% {
         top: -10%;
         opacity: 0;
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.6;
     }
     100% {
         top: 110%;
