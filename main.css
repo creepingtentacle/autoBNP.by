@@ -286,6 +286,45 @@ nav a:hover::before {
     50% {
         opacity: 0.6;
     }
+    /* Медиа-запросы для адаптации на мобильных устройствах */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 10px; /* Увеличены отступы справа */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 30px 20px; /* Увеличена высота верхней шапки */
+    }
+    
+    header .logo {
+        font-size: 1.5em;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        padding: 20px 10px; /* Увеличены отступы справа */
+    }
+
+    .category, .product {
+        margin-bottom: 20px;
+    }
+}
+    .category, .product {
+        margin-bottom: 20px;
+    }
+}
     100% {
         top: 110%;
         opacity: 0;
