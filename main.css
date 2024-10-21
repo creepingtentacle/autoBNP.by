@@ -82,7 +82,7 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background: #504e4e; /* Цвет рамки */
+    background: #504e4e; /* Серый цвет рамки меню */
     padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 0; /* Обычные края */
@@ -128,7 +128,7 @@ nav a:hover::before {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три в ряд */
+    grid-template-columns: repeat(4, 1fr); /* Четыре в ряд */
     gap: 20px;
     padding: 20px;
 }
@@ -307,6 +307,7 @@ nav a:hover::before {
         opacity: 0;
     }
 }
+
 button:focus, a:focus {
     outline: none;
     box-shadow: none;
@@ -341,6 +342,3 @@ button:focus, a:focus {
         margin-bottom: 20px;
     }
 }
-
-
-
