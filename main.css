@@ -287,16 +287,20 @@ nav a:hover::before {
         opacity: 0.6;
     }
 /* Медиа-запросы для адаптации на мобильных устройствах */
-@media (max-width: 786px) {
+@media (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(2, 1fr); /* Два в ряд для планшетов */
-        padding: 20px 20px; /* Увеличены отступы справа */
+        padding: 20px 10px; /* Увеличены отступы справа */
     }
 }
 
 @media (max-width: 768px) {
     body {
         font-size: 14px; /* Уменьшаем общий размер шрифта */
+        margin: 0;
+        padding: 0;
+        width: 100%; /* Устанавливаем ширину тела страницы */
+        overflow-x: hidden; /* Скрываем горизонтальный скроллбар */
     }
 
     header {
@@ -318,7 +322,7 @@ nav a:hover::before {
 
     .container {
         grid-template-columns: 1fr; /* Один в ряд для мобильных устройств */
-        padding: 10px 10px; /* Уменьшение отступов */
+        padding: 10px 5px; /* Уменьшение отступов */
     }
 
     .category, .product {
