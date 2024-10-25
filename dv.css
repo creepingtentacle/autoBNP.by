@@ -74,7 +74,7 @@ nav a:focus, nav a:hover {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Два в ряд для компьютеров */
+    grid-template-columns: 1fr; /* Один в ряд для компьютеров */
     gap: 20px;
     padding: 20px;
 }
