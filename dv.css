@@ -18,9 +18,12 @@ header {
 }
 
 .logo {
-    font-size: 2em;
-    font-weight: bold;
+    max-width: 12.5%; /* Уменьшение масштаба логотипа еще в два раза */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
+
 
 nav {
     display: flex;
