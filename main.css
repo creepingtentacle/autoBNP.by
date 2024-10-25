@@ -20,10 +20,64 @@ header {
 }
 
 .logo {
-    max-width: 100%;
+    max-width: 25%; /* Уменьшение масштаба логотипа в 4 раза */
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+/* Полупрозрачные круги */
+.circle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.circle.small {
+    width: 20px;
+    height: 20px;
+}
+
+.circle.medium {
+    width: 40px;
+    height: 40px;
+}
+
+.circle.large {
+    width: 60px;
+    height: 60px;
+}
+
+.circle:nth-child(1) {
+    top: 10px;
+    left: 10%;
+}
+
+.circle:nth-child(2) {
+    top: 10px;
+    right: 20%;
+}
+
+.circle:nth-child(3) {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle:nth-child(4) {
+    top: 10px;
+    right: 10%;
+}
+
+.circle:nth-child(5) {
+    top: 10px;
+    left: 20%;
+}
+
+.circle:nth-child(6) {
+    top: 10px;
+    right: 30%;
 }
 
 nav {
@@ -41,11 +95,12 @@ nav a {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.1em;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 nav a:hover {
     color: #ff4081;
+    transform: scale(1.1);
 }
 
 nav a:focus, nav a:hover {
@@ -65,12 +120,32 @@ nav a:focus, nav a:hover {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
 .category:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.category:hover::before {
+    transform: scaleX(1);
 }
 
 .category-btn {
@@ -79,6 +154,8 @@ nav a:focus, nav a:hover {
     text-decoration: none;
     padding: 20px;
     border-radius: 10px;
+    position: relative;
+    z-index: 1;
 }
 
 .category-btn img {
@@ -128,4 +205,12 @@ button:focus, a:focus {
     .category-btn {
         padding: 10px;
     }
+}
+
+/* Стили для футера */
+footer {
+    text-align: left;
+    padding: 20px;
+    background-color: #000; /* Черный фон */
+    color: #fff;
 }
