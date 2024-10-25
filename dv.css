@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 body {
     font-family: 'Inter', sans-serif;
     background: url('images/background.jpg') no-repeat center center fixed;
@@ -11,10 +13,8 @@ body {
 header {
     text-align: center;
     padding: 20px 10px;
-    background: rgba(128, 0, 0, 0.8); /* Темно-красный */
+    background: rgba(128, 0, 0, 0.8);
     color: #fff;
-    position: relative;
-    overflow: hidden;
 }
 
 .logo {
@@ -37,13 +37,12 @@ nav a {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.1em;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    border-radius: 15px; /* Округлое выделение кнопок */
+    transition: color 0.3s ease-in-out;
+    border-radius: 15px; /* Добавлено округлое выделение кнопок */
 }
 
 nav a:hover {
-    color: #9a93b6;
-    transform: scale(1.1);
+    color: #ff4081;
 }
 
 nav a:focus, nav a:hover {
@@ -65,27 +64,7 @@ nav a:focus, nav a:hover {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-}
-
-.category::before, .product::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(128, 128, 128, 0.2);
-    transform: scaleX(0);
-    transform-origin: left;
     transition: transform 0.3s ease-in-out;
-    z-index: 0;
-}
-
-.category:hover::before, .product:hover::before {
-    transform: scaleX(1);
 }
 
 .category:hover, .product:hover {
@@ -99,15 +78,13 @@ nav a:focus, nav a:hover {
     text-decoration: none;
     padding: 20px;
     border-radius: 10px;
-    position: relative;
-    z-index: 1;
 }
 
 .category-btn img, .product img {
     width: 100%;
     height: auto;
     max-height: 150px; /* Ограничиваем высоту изображений */
-    object-fit: contain; /* Полное отображение изображения */
+    object-fit: contain; /* Обеспечиваем полное отображение изображения */
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
 }
@@ -124,7 +101,7 @@ nav a:focus, nav a:hover {
 }
 
 .product .price {
-    color: #490808;
+    color: #4b0e0e;
     font-weight: 700;
 }
 
@@ -132,69 +109,7 @@ button:focus, a:focus {
     outline: none;
     box-shadow: none;
 }
-/* Анимация плавающих кругов */
-.circle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    opacity: 0.6;
-    animation: floatDown 10s infinite linear;
-}
 
-.circle.small {
-    width: 20px;
-    height: 20px;
-}
-
-.circle.medium {
-    width: 40px;
-    height: 40px;
-}
-
-.circle.large {
-    width: 60px;
-    height: 60px;
-}
-
-.circle:nth-child(1) {
-    top: -30px;
-    left: 10%;
-}
-
-.circle:nth-child(2) {
-    top: -30px;
-    right: 20%;
-}
-
-.circle:nth-child(3) {
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.circle:nth-child(4) {
-    top: -30px;
-    right: 10%;
-}
-
-.circle:nth-child(5) {
-    top: -30px;
-    left: 20%;
-}
-
-.circle:nth-child(6) {
-    top: -30px;
-    right: 30%;
-}
-
-@keyframes floatDown {
-    0% {
-        top: -10%;
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.6;
-    }
 /* Медиа-запросы для адаптации на мобильных устройствах */
 @media (max-width: 1024px) {
     .container {
