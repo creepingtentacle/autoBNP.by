@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85em; /* Уменьшение текста на 33% */
+}
+
+header {
+    background-color: #831425; /* Красный цвет фона */
+    text-align: center;
+    padding: 20px 0;
+    border: 2px solid red; /* Красная рамка */
+}
+
+header .logo {
+    color: white;
+    font-size: 2em; /* Уменьшение текста на 33% */
+    font-weight: bold;
+}
+
+nav {
+    background-color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 0.68em; /* Уменьшение текста на 33% */
+    border: 2px solid black; /* Черная рамка */
+    padding: 5px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ff4081;
+    transform: scale(1.1);
+}
+
+nav a:focus, nav a:hover {
+    outline: none;
+    box-shadow: none;
+}
+
+.container {
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-image-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем изображение */
+}
+
+.main-image {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.85em; /* Уменьшение текста на 33% */
+    border-radius: 50%; /* Закругленные края */
+}
+
+button.prev {
+    left: 10px; /* Устанавливаем отступ слева */
+}
+
+button.next {
+    right: 10px; /* Устанавливаем отступ справа */
+}
+
+.product-detail {
+    text-align: left; /* Размещаем характеристики левее */
+    margin-left: 20px; /* Добавляем отступ слева */
+    line-height: 1.5; /* Устанавливаем расстояние между строками */
+}
+
+.price-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 0.68em; /* Уменьшение текста на 33% */
+    color: #fff;
+    background-color: #ff0000; /* Яркий красный цвет */
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.price-button:hover {
+    background-color: #cc0000; /* Темно-красный цвет при наведении */
+    transform: scale(1.05);
+}
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    header .logo {
+        font-size: 1.34em; /* Уменьшение текста на 33% */
+    }
+    nav a {
+        font-size: 0.45em; /* Уменьшение текста на 33% */
+        margin: 0 10px; /* Корректируем отступ */
+    }
+    .gallery img {
+        width: 100%; /* Корректируем размер изображений на мобильных устройствах */
+    }
+    .product-detail {
+        font-size: 0.85em; /* Уменьшение текста на 33% */
+    }
+    .price {
+        font-size: 1.02em; /* Уменьшение текста на 33% */
+    }
+    .video-review iframe {
+        width: 100%; /* Занимает всю ширину контейнера */
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+    }
+    button.prev, button.next {
+        top: 50%; /* Центрируем кнопки по вертикали */
+        transform: translateY(-50%);
+    }
+}
+
+/* Медиа-запросы для десктопной версии */
+@media (min-width: 769px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    nav a {
+        flex: 1 0 14%; /* Занимает 1/7 ширины контейнера */
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
