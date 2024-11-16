@@ -94,7 +94,7 @@ button.next {
     line-height: 1.5; /* Устанавливаем расстояние между строками */
 }
 
-.price-button {
+.price-button, .request-button {
     display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
@@ -104,10 +104,10 @@ button.next {
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 10px; /* Закругленные края */
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.price-button:hover {
+.price-button:hover, .request-button:hover {
     background-color: #cc0000; /* Темно-красный цвет при наведении */
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
