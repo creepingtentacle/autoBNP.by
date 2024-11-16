@@ -98,19 +98,21 @@ button.next {
     display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
-    font-size: 0.68em; /* Уменьшение текста на 33% */
+    font-size: 1em;
     color: #fff;
     background-color: #ff0000; /* Яркий красный цвет */
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px; /* Закругленные края */
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .price-button:hover {
     background-color: #cc0000; /* Темно-красный цвет при наведении */
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень при наведении */
 }
+
 /* Медиа-запросы для мобильных устройств */
 @media (max-width: 768px) {
     header .logo {
