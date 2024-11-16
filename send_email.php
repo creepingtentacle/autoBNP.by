@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $to = "your-email@example.com"; // Замените на ваш адрес электронной почты
+    $to = "llza21022003@gmail.com"; // Замените на ваш адрес электронной почты
     $subject = "Новая заявка с сайта";
     $body = "Имя: $name\nЭлектронная почта: $email\nСообщение:\n$message";
 
