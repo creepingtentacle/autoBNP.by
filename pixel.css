@@ -111,18 +111,6 @@ button.next {
     background-color: #cc0000; /* Темно-красный цвет при наведении */
     transform: scale(1.05);
 }
-
-.video-wrapper {
-    margin-top: 20px;
-    text-align: center;
-}
-
-video {
-    width: 80%;
-    max-width: 600px;
-    border: 2px solid #ccc; /* Добавляем рамку вокруг видео */
-}
-
 /* Медиа-запросы для мобильных устройств */
 @media (max-width: 768px) {
     header .logo {
