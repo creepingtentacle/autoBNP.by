@@ -91,4 +91,42 @@ button.next {
 .product-detail {
     text-align: left; /* Размещаем характеристики левее */
     margin-left: 20px; /* Добавляем отступ слева */
-    line-height: 1.5; /* Устанавливаем расстояние между строк[_{{{CITATION{{{_1{](https://github.com/ogabek96/webRTC-video-call/tree/c7b4086619724b6a07456c0595aa2186c8aa4ccc/public%2Fjs%2Ffullscreen.js)
+    line-height: 1.5; /* Устанавливаем расстояние между строк */
+}
+
+.price-button {
+    display: inline-block;
+    padding: 20px 40px; /* Увеличиваем размер кнопки в два раза */
+    font-size: 1.7em; /* Увеличиваем размер текста кнопки в два раза */
+    color: white; /* Белые буквы */
+    background-color: #ff4081; /* Цвет фона */
+    border: 2px solid red; /* Красная рамка */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 10px; /* Скругленные углы */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.price-button:hover {
+    background-color: #831425;
+    color: white;
+}
+
+.price-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.price-button:hover::before {
+    top: -70%;
+    left: 100%;
+    transition: 0.5s;
+}
