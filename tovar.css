@@ -130,3 +130,45 @@ button.next {
     left: 100%;
     transition: 0.5s;
 }
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    header .logo {
+        font-size: 1.34em; /* Уменьшение текста на 33% */
+    }
+    nav a {
+        font-size: 0.45em; /* Уменьшение текста на 33% */
+        margin: 0 10px; /* Корректируем отступ */
+    }
+    .gallery img {
+        width: 100%; /* Корректируем размер изображений на мобильных устройствах */
+    }
+    .product-detail {
+        font-size: 0.85em; /* Уменьшение текста на 33% */
+    }
+    .price {
+        font-size: 1.02em; /* Уменьшение текста на 33% */
+    }
+    .video-review iframe {
+        width: 100%; /* Занимает всю ширину контейнера */
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+    }
+    button.prev, button.next {
+        top: 50%; /* Центрируем кнопки по вертикали */
+        transform: translateY(-50%);
+    }
+}
+
+/* Медиа-запросы для десктопной версии */
+@media (min-width: 769px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    nav a {
+        flex: 1 0 14%; /* Занимает 1/7 ширины контейнера */
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
