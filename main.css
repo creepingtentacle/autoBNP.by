@@ -56,7 +56,7 @@ nav a:focus, nav a:hover {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Гарантирует одинаковый размер кнопок */
+    grid-template-columns: repeat(4, 1fr); /* Четыре в ряд */
     gap: 20px;
     padding: 20px;
 }
@@ -159,7 +159,8 @@ footer {
     padding: 20px;
     background-color: #000; /* Черный фон */
     color: #fff;
-    position: absolute;
-    bottom: 0;
+    position: relative;
     width: 100%;
+    margin-top: 20px; /* Добавляем отступ сверху для футера */
+    clear: both; /* Обеспечиваем, чтобы футер располагался под всеми элементами */
 }
