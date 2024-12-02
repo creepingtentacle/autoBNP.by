@@ -56,10 +56,11 @@ nav a:focus, nav a:hover {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Гарантирует одинаковый размер кнопок */
     gap: 20px;
     padding: 20px;
 }
+
 .category {
     text-align: center;
     background: #fff;
@@ -68,6 +69,7 @@ nav a:focus, nav a:hover {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
+    height: 350px; /* Задает одинаковую высоту для всех категорий */
 }
 
 .category:hover {
@@ -155,6 +157,9 @@ button:focus, a:focus {
 footer {
     text-align: left;
     padding: 20px;
-    background-color: rgba(131, 20, 37); /* Темно-красный фон */
+    background-color: #000; /* Черный фон */
     color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
