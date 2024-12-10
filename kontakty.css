@@ -67,7 +67,7 @@ contact-info a:hover {
 
 footer {
     text-align: center;
-    padding: 10px; /* Уменьшение отступов в два раза */
+    padding: 5px; /* Уменьшение отступов в два раза */
     background-color: var(--footer-bg-color);
     color: var(--white);
     position: fixed;
