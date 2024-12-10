@@ -61,7 +61,7 @@ header h1:hover {
     transition: color 0.3s;
 }
 
-.contact-info a:hover {
+contact-info a:hover {
     color: darken(var(--accent-color), 10%);
 }
 
@@ -114,3 +114,4 @@ footer {
 .back-button a:hover {
     background-color: darken(var(--accent-color), 10%);
 }
+
